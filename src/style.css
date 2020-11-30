@@ -1,0 +1,126 @@
+body{
+    background-color: brown;
+}    
+main {
+    align-content: center;
+    color: cornsilk;
+}
+
+.title{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+.item{
+    padding-bottom: 10px;
+}
+
+button,
+input[type="submit"],
+button,
+input[type="Reset"],
+button,
+input[type="button"] {
+  border: solid white;
+  background-color: purple;
+  color: white;
+  padding: 10px 40px 10px 40px;
+  margin-top: 10px;
+  transition: .3s;
+  
+}
+
+
+select{
+    background-color: purple;
+    color: white;
+    padding: 10px 40px 10px 40px;
+    border: solid white;
+}
+
+ul {
+    padding-bottom: 10px;
+    list-style: none;
+  }
+
+  ul li{
+    padding-bottom: 10px;
+    list-style: none;
+    border: solid 5px yellow;
+    border-radius: 25px;
+    margin: auto;
+    width: 70%;
+    margin-top: 10px;
+    background-color: indigo;
+    font-size: 32px;
+  }
+
+  textarea {
+    resize: none;
+    width: 95%;
+  }
+
+  form{
+      width: 70%;
+      text-align: center;
+      border: solid 5px yellow;
+      margin: auto;
+  }
+  
+
+  a{
+      color: white;
+  }
+
+  a:hover{
+      color: teal;
+  }
+  .bookmark-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.error-container h2 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .error-container button {
+    float: right;
+    margin: 3px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 0 1px lightgray;
+  }
+  
+  .error-container p {
+    margin: 5px;
+    text-align: center;
+  }
+  
+
+  @media all and (min-width: 930px) {
+    .bookmark-info {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    /* .container{
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: center;
+    } */
+}
