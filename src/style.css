@@ -6,18 +6,9 @@ main {
     color: cornsilk;
 }
 
-.title{
+.title, .buttons, .new-button{
     text-align: center;
-}
-
-.container{
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-}
-
-.item{
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 button,
@@ -43,72 +34,53 @@ select{
     border: solid white;
 }
 
-ul {
-    padding-bottom: 10px;
-    list-style: none;
-  }
 
-  ul li{
-    padding-bottom: 10px;
-    list-style: none;
-    border: solid 5px yellow;
-    border-radius: 25px;
-    margin: auto;
-    width: 70%;
-    margin-top: 10px;
-    background-color: indigo;
-    font-size: 32px;
-  }
 
-  textarea {
-    resize: none;
-    width: 95%;
-  }
-
-  form{
-      width: 70%;
-      text-align: center;
-      border: solid 5px yellow;
-      margin: auto;
-  }
-  
-
-  a{
-      color: white;
-  }
-
-  a:hover{
-      color: teal;
-  }
-  .bookmark-info {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+li{
+  text-align: center;
+  padding: 10px;
+  list-style: none;
+  border: solid 5px yellow;
+  border-radius: 25px;
+  margin: auto;
+  width: 70%;
+  margin-top: 10px;
+  background-color: indigo;
+  font-size: 32px;
 }
 
-.error-container h2 {
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  
-  .error-container button {
-    float: right;
-    margin: 3px;
-    font-size: 15px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 1px 0 1px lightgray;
-  }
-  
-  .error-container p {
-    margin: 5px;
-    text-align: center;
-  }
-  
+li a{
+  color: white;
+}
+
+li a:hover{
+  color: teal;
+}
+
+form{
+  text-align: center;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input{
+  margin-bottom: 10px;
+}
+
+textarea{
+  width: 50%;
+}
+
+.error-area {
+  text-align: center;
+  color: white;
+  padding: 5px;
+  font-family: 'roboto', sans-serif;
+}
 
   @media all and (min-width: 930px) {
-    .bookmark-info {
+    .content{
         display: flex;
         flex-flow: row;
         justify-content: space-between;

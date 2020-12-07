@@ -1,102 +1,41 @@
-let bookmarks = [];
-let adding = false;
-let error = null;
-let filter = false;
-let filteredBookmarks = [];
-
-const addBookmark = function (bookmark) {
-  // adds expand locally
-  for (let i = 0; i < bookmarks.length; i++) {
-    if (bookmarks[i]) {
-      bookmarks[i].expand = false;
-    }
-  }
-  // adds bookmark to store
-  bookmarks.push(bookmark);
-  // toggles adding state
-  this.adding = false;
+const store = {
+  bookmarks: [],
+  adding: false,
+  error: null,
+  filter: 0,
 };
 
-const expandBookmark = function (id) {
-  //find id to expand
-  let expandedBookmark = bookmarks.find(bookmark => bookmark.id === id);
-  //toggle expand value
-  if (expandedBookmark.expand) {
-    expandedBookmark.expand = false;
-  } else {
-    expandedBookmark.expand = true;
-  }
+const findById = function (id) {
+  return store.bookmarks.find((currentItem) => currentItem.id === id);
 };
 
-const deleteBookmark = function (id) {
-    this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== id);
-  }
+const expandThis = function (id) {
+  console.log("are we expanding?");
+  let selectedItem = findById(id);
+  console.log("was the id found?", findById(id));
+  selectedItem.expanded = !selectedItem.expanded;
+  console.log("are we expanded", selectedItem.expanded);
+};
 
+const addBookmark = function (item) {
+  this.store.bookmarks.push(item);
+};
 
-//toggle adding state in store
-const setAdding = function (param) {
-  this.adding = param;
-}
+const findAndDelete = function (id) {
+  store.bookmarks = store.bookmarks.filter(
+    (currentItem) => currentItem.id !== id
+  );
+};
 
-const findById = (id) => {
-    //   console.log(`id is ${id}`);
-    //   console.log(items);
-    let targetBookmark = bookmarks.find((item) => item.id === id);
-    // console.log(targetBookmark);
-    return targetBookmark;
-  };
-  
-  const findAndUpdate = function (id, object) {
-    // console.log('finding');
-  
-    let target = findById(id);
-  
-    Object.assign(target, object);
-  };
-  
-  const findAndDelete = (id) => {
-    let itemToDelete = findById(id);
-    let index = bookmarks.indexOf(itemToDelete);
-  
-    bookmarks.splice(index, 1);
-  };
-  
-
-//filters bookmarks in store
-const filterBookmarks = function (filterNumber) {
-  this.filter = true;
-  this.filteredBookmarks = [];
-  this.bookmarks.forEach(bookmark => {
-    if (bookmark.rating >= filterNumber) {
-      this.filteredBookmarks.push(bookmark);
-    }
-
-  })
-}
-
-//toggle filter state in store
-const setFiltering = function (param) {
-  this.filter = param;
-}
-
-//sets error
-const setError = function(errorMessage){
-  this.error = errorMessage;
-}
+const setError = function (error) {
+  this.store.error = error;
+};
 
 export default {
-  bookmarks,
-  adding,
-  error,
-  filter,
-  addBookmark,
-  expandBookmark,
-  setAdding,
-  setFiltering,
-  setError,
-  filterBookmarks,
-  filteredBookmarks,
+  store,
   findById,
-  findAndUpdate,
-  deleteBookmark,
-}
+  expandThis,
+  addBookmark,
+  findAndDelete,
+  setError,
+};
