@@ -10,11 +10,8 @@ const findById = function (id) {
 };
 
 const expandThis = function (id) {
-  console.log("are we expanding?");
   let selectedItem = findById(id);
-  console.log("was the id found?", findById(id));
   selectedItem.expanded = !selectedItem.expanded;
-  console.log("are we expanded", selectedItem.expanded);
 };
 
 const addBookmark = function (item) {
